@@ -14,6 +14,8 @@ Sale System Acme Traders Co Record Shop Customers Receipt Purchases Staff Item
 **Final Words**
 Sale Item Receipt Purchase Item Stocks
 
+Pushing Now!!!!!!!!XOXOXO!OX!OXO!
+
 
 
 
