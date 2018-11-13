@@ -30,12 +30,13 @@
         {
             this.searchButton = new System.Windows.Forms.Button();
             this.searchBar = new System.Windows.Forms.TextBox();
+            this.movieCombo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // searchButton
             // 
             this.searchButton.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButton.Location = new System.Drawing.Point(233, 90);
+            this.searchButton.Location = new System.Drawing.Point(233, 145);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(109, 54);
             this.searchButton.TabIndex = 0;
@@ -46,17 +47,27 @@
             // searchBar
             // 
             this.searchBar.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBar.Location = new System.Drawing.Point(12, 41);
+            this.searchBar.Location = new System.Drawing.Point(12, 105);
             this.searchBar.Name = "searchBar";
             this.searchBar.Size = new System.Drawing.Size(330, 34);
             this.searchBar.TabIndex = 1;
             this.searchBar.TextChanged += new System.EventHandler(this.searchBar_TextChanged);
             // 
+            // movieCombo
+            // 
+            this.movieCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.movieCombo.FormattingEnabled = true;
+            this.movieCombo.Location = new System.Drawing.Point(12, 14);
+            this.movieCombo.Name = "movieCombo";
+            this.movieCombo.Size = new System.Drawing.Size(121, 21);
+            this.movieCombo.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 165);
+            this.ClientSize = new System.Drawing.Size(351, 223);
+            this.Controls.Add(this.movieCombo);
             this.Controls.Add(this.searchBar);
             this.Controls.Add(this.searchButton);
             this.Name = "Form1";
@@ -70,6 +81,7 @@
 
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox searchBar;
+        private System.Windows.Forms.ComboBox movieCombo;
     }
 }
 
