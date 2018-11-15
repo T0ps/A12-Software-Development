@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Net;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+
+//using Newtonsoft.Json.Linq; // Implement?
 
 namespace WindowsFormsApp2
 {
@@ -16,6 +21,8 @@ namespace WindowsFormsApp2
 
         public string searchFunction;
         public string searchVal;
+        public string uri;
+        public string json;
 
         public Form1()
         {
@@ -25,16 +32,35 @@ namespace WindowsFormsApp2
             movieCombo.Items.Add("TMDb");
             movieCombo.SelectedIndex = 0;
 
- 
+
 
             
 
 
         }
 
+
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
             searchVal = searchBar.Text;
+        }
+
+        // OMDb
+        public class movieStatsOMDb
+        {
+            public string title { get; set; }
+            public string released { get; set; }
+            public string plot { get; set; }
+            public string value{ get; set; }
+        }
+
+        // TMDb
+        public class movieStatsTMDb
+        {
+            public string title { get; set; }
+            public string release_date { get; set; }
+            public string overview { get; set; }
+            public string vote_average { get; set; }
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -42,7 +68,7 @@ namespace WindowsFormsApp2
 
             if (movieCombo.SelectedItem.ToString() == "OMDb")
                 {
-                searchFunction = "http://www.omdbapi.com/?apikey=d111ba84&" + "t=" + searchVal + "&r=xml";
+                searchFunction = "http://www.omdbapi.com/?apikey=d111ba84&" + "t=" + searchVal;
             }
 
             else if (movieCombo.SelectedItem.ToString() == "TMDb")
@@ -50,23 +76,19 @@ namespace WindowsFormsApp2
                 searchFunction = "http://api.themoviedb.org/3/search/movie?api_key=95933e5a60f119e9b19b8e2be7252893&" + "query=" + searchVal;
             }
 
-            // Error catching -
-            // In case of no film title entered
-            if (searchFunction == null || searchFunction == " ")
-            {
-                System.Windows.Forms.MessageBox.Show("Please enter a film title.");
-            }
 
-            else
-            {
-                System.Diagnostics.Process.Start(searchFunction);
-            }
-            
-            
+            string x;
+            x = "hello title test";
+            string y;
 
-            //string uri = searchFunction;
+            Regex reg = new Regex(@"(?<=title)\d+");
+            return reg.Matches(x);
+
+            System.Diagnostics.Process.Start(searchFunction);
+
+            //uri = searchFunction;
             //XDocument document = XDocument.Load(uri);
-            //richTextBox1.Text = Convert.ToString(document);
+            //movieOutput.Text = Convert.ToString(document);
         }
     }
 }
