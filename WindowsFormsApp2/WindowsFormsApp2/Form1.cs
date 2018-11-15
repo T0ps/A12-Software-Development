@@ -27,20 +27,7 @@ namespace WindowsFormsApp2
 
  
 
-            if (movieCombo.SelectedText == "OMDb")
-            {
-                MessageBox.Show("OMDb");
-
-                searchFunction = "http://www.omdbapi.com/?apikey=d111ba84&" + "t=" + searchVal + "&r=xml";
-                
-            }
-
-            else if (movieCombo.SelectedText == "TMDb")
-            {
-                MessageBox.Show("TMDb");
-
-                searchFunction = "https://api.themoviedb.org/3/movie/550?api_key=95933e5a60f119e9b19b8e2be7252893" + "/search" + searchVal;
-            }
+            
 
 
         }
@@ -53,7 +40,29 @@ namespace WindowsFormsApp2
         private void searchButton_Click(object sender, EventArgs e)
         {
 
-            System.Diagnostics.Process.Start(searchFunction);
+            if (movieCombo.SelectedItem.ToString() == "OMDb")
+                {
+                searchFunction = "http://www.omdbapi.com/?apikey=d111ba84&" + "t=" + searchVal + "&r=xml";
+            }
+
+            else if (movieCombo.SelectedItem.ToString() == "TMDb")
+                {
+                searchFunction = "http://api.themoviedb.org/3/search/movie?api_key=95933e5a60f119e9b19b8e2be7252893&" + "query=" + searchVal;
+            }
+
+            // Error catching -
+            // In case of no film title entered
+            if (searchFunction == null || searchFunction == " ")
+            {
+                System.Windows.Forms.MessageBox.Show("Please enter a film title.");
+            }
+
+            else
+            {
+                System.Diagnostics.Process.Start(searchFunction);
+            }
+            
+            
 
             //string uri = searchFunction;
             //XDocument document = XDocument.Load(uri);
