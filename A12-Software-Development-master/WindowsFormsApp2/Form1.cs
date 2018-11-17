@@ -53,6 +53,7 @@ namespace WindowsFormsApp2
             movieGenre.Text = "";
             movieRating.Text = "";
             movieAwards.Text = "";
+            pictureBox2.Image = null;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -84,12 +85,21 @@ namespace WindowsFormsApp2
                 Genre = (string)film.Root.Element("movie").Attribute("genre").Value,
                 Rating = (string)film.Root.Element("movie").Attribute("imdbRating").Value,
                 Awards = (string)film.Root.Element("movie").Attribute("awards").Value,
+                Poster = (string)film.Root.Element("movie").Attribute("poster").Value,
             };
             movieName.Text = Film.Name;
             movieYear.Text = Film.Year;
             movieGenre.Text = Film.Genre;
             movieRating.Text = Film.Rating;
             movieAwards.Text = Film.Awards;
+            try
+            {
+                pictureBox2.Load(Film.Poster);
+            }
+            catch
+            {
+                pictureBox2.Image = null;
+            }
         }
 
         private bool isValidFilm(XDocument xml) //Method to check if the movie is valid
@@ -235,6 +245,11 @@ namespace WindowsFormsApp2
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }

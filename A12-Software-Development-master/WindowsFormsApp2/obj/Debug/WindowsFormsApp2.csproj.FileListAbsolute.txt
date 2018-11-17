@@ -37,3 +37,4 @@ C:\Users\Harry\Desktop\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 C:\Users\Harry\Desktop\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
 C:\Users\Harry\Desktop\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
 C:\Users\Harry\Desktop\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\Harry\Desktop\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojResolveAssemblyReference.cache

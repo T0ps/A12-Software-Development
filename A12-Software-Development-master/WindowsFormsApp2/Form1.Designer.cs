@@ -46,6 +46,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // searchButton
@@ -79,7 +81,7 @@
             // 
             // movieName
             // 
-            this.movieName.Location = new System.Drawing.Point(118, 268);
+            this.movieName.Location = new System.Drawing.Point(622, 356);
             this.movieName.Name = "movieName";
             this.movieName.Size = new System.Drawing.Size(330, 50);
             this.movieName.TabIndex = 3;
@@ -88,7 +90,7 @@
             // 
             // movieYear
             // 
-            this.movieYear.Location = new System.Drawing.Point(118, 344);
+            this.movieYear.Location = new System.Drawing.Point(622, 438);
             this.movieYear.Name = "movieYear";
             this.movieYear.Size = new System.Drawing.Size(330, 50);
             this.movieYear.TabIndex = 4;
@@ -97,7 +99,7 @@
             // 
             // movieGenre
             // 
-            this.movieGenre.Location = new System.Drawing.Point(118, 411);
+            this.movieGenre.Location = new System.Drawing.Point(622, 534);
             this.movieGenre.Name = "movieGenre";
             this.movieGenre.Size = new System.Drawing.Size(330, 50);
             this.movieGenre.TabIndex = 5;
@@ -106,7 +108,7 @@
             // 
             // movieRating
             // 
-            this.movieRating.Location = new System.Drawing.Point(118, 473);
+            this.movieRating.Location = new System.Drawing.Point(622, 604);
             this.movieRating.Name = "movieRating";
             this.movieRating.Size = new System.Drawing.Size(330, 50);
             this.movieRating.TabIndex = 6;
@@ -114,7 +116,7 @@
             // 
             // movieAwards
             // 
-            this.movieAwards.Location = new System.Drawing.Point(118, 541);
+            this.movieAwards.Location = new System.Drawing.Point(622, 687);
             this.movieAwards.Name = "movieAwards";
             this.movieAwards.Size = new System.Drawing.Size(330, 50);
             this.movieAwards.TabIndex = 7;
@@ -171,7 +173,7 @@
             // 
             // movieNameBox
             // 
-            this.movieNameBox.Location = new System.Drawing.Point(12, 268);
+            this.movieNameBox.Location = new System.Drawing.Point(478, 356);
             this.movieNameBox.Name = "movieNameBox";
             this.movieNameBox.Size = new System.Drawing.Size(100, 20);
             this.movieNameBox.TabIndex = 13;
@@ -180,7 +182,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 344);
+            this.textBox1.Location = new System.Drawing.Point(478, 438);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 14;
@@ -189,7 +191,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 411);
+            this.textBox2.Location = new System.Drawing.Point(478, 534);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 15;
@@ -197,7 +199,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 473);
+            this.textBox3.Location = new System.Drawing.Point(478, 604);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 16;
@@ -205,18 +207,28 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 541);
+            this.textBox4.Location = new System.Drawing.Point(478, 687);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 17;
             this.textBox4.Text = "Awards";
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(13, 156);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(329, 412);
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 923);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -237,6 +249,7 @@
             this.Controls.Add(this.searchButton);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,6 +275,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
