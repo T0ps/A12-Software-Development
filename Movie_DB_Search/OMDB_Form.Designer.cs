@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp2
+﻿namespace Movie_DB_Search
 {
     partial class OMDB_Form
     {
@@ -30,7 +30,6 @@
         {
             this.searchButton = new System.Windows.Forms.Button();
             this.searchBar = new System.Windows.Forms.TextBox();
-            this.movieCombo = new System.Windows.Forms.ComboBox();
             this.movieName = new System.Windows.Forms.RichTextBox();
             this.movieYear = new System.Windows.Forms.RichTextBox();
             this.movieGenre = new System.Windows.Forms.RichTextBox();
@@ -69,15 +68,6 @@
             this.searchBar.Size = new System.Drawing.Size(330, 34);
             this.searchBar.TabIndex = 1;
             this.searchBar.TextChanged += new System.EventHandler(this.searchBar_TextChanged);
-            // 
-            // movieCombo
-            // 
-            this.movieCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.movieCombo.FormattingEnabled = true;
-            this.movieCombo.Location = new System.Drawing.Point(12, 14);
-            this.movieCombo.Name = "movieCombo";
-            this.movieCombo.Size = new System.Drawing.Size(121, 21);
-            this.movieCombo.TabIndex = 2;
             // 
             // movieName
             // 
@@ -223,7 +213,7 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // Form1
+            // OMDB_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -244,11 +234,10 @@
             this.Controls.Add(this.movieGenre);
             this.Controls.Add(this.movieYear);
             this.Controls.Add(this.movieName);
-            this.Controls.Add(this.movieCombo);
             this.Controls.Add(this.searchBar);
             this.Controls.Add(this.searchButton);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "OMDB_Form";
+            this.Text = "OMDB";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -259,7 +248,6 @@
 
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox searchBar;
-        private System.Windows.Forms.ComboBox movieCombo;
         private System.Windows.Forms.RichTextBox movieName;
         private System.Windows.Forms.RichTextBox movieYear;
         private System.Windows.Forms.RichTextBox movieGenre;

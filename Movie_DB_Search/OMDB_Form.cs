@@ -16,7 +16,7 @@ using System.Text.RegularExpressions;
 
 //using Newtonsoft.Json.Linq; // Implement?
 
-namespace OMDB_Form
+namespace Movie_DB_Search
 {
     public partial class OMDB_Form : Form
     {

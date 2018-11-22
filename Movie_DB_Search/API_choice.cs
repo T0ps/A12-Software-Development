@@ -16,20 +16,29 @@ namespace Movie_DB_Search
         {
             InitializeComponent();
             this.ControlBox = false;
-
         }
 
         private void OMDB_button_Click(object sender, EventArgs e)
         {
+            
             OMDB_Form OMDB_Form = new OMDB_Form();
             OMDB_Form.Show();
+
+
+            base.OnClosed(e);
+            if (Application.OpenForms.Count == 1)
+                Application.Exit();
         }
 
         private void TMDB_button_Click(object sender, EventArgs e)
         {
+
             TMDB_Form TMDB_Form = new TMDB_Form();
             TMDB_Form.Show();
-            
+
+            base.OnClosed(e);
+            if (Application.OpenForms.Count == 1)
+                Application.Exit();
         } 
     }
 }
