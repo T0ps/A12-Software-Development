@@ -16,9 +16,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-//using System.Web.Script.Serialization;
 
-//using Newtonsoft.Json.Linq; // Implement?
 
 namespace Movie_DB_Search
 {
@@ -43,6 +41,7 @@ namespace Movie_DB_Search
             
         }
 
+        // If the search bar text is changed, use the searchMovie function to update it in realtime
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
             searchVal = searchBar.Text;
@@ -53,17 +52,8 @@ namespace Movie_DB_Search
             //searchMovie();
         }
 
-        
-
-        //public class TMDbFields
-        //{
-        //    public string original_title { get; set; }
-        //    public string release_date { get; set; }
-        //    public string genres { get; set; }
-        //    public string vote_average { get; set; }
-        //}
-
-        private void resetMovieData() // Reset the displayed movie information
+        // Reset the displayed movie information
+        private void resetMovieData() 
         {
             movieName.Text = "";
             movieYear.Text = "";
@@ -78,18 +68,19 @@ namespace Movie_DB_Search
             searchMovie();
         }
 
+        // Main Search Function
         public void searchMovie()
         {
+            resetMovieData();
+
             var searchFunction = "https://api.themoviedb.org/3/search/movie?api_key=95933e5a60f119e9b19b8e2be7252893" + "&query=" + searchVal + "&page=1&include_adult=false";
 
             System.Diagnostics.Process.Start(searchFunction);
 
-            // commented out
             //XDocument film = XDocument.Load(searchFunction);
 
             WebClient c = new WebClient();
             var data = c.DownloadString(searchFunction);
-            //string data = "{\"displayName\":\"Alex Wu\",\"signInNames\":[{\"type\":\"emailAddress\",\"value\":\"AlexW@example.com\"},{\"type\":\"emailAddress\",\"value\":\"AlexW2@example.com\"}]}";
 
             JObject filmJson = JObject.Parse(data);
             JArray Films = (JArray)filmJson.SelectToken("results");
@@ -114,30 +105,6 @@ namespace Movie_DB_Search
                 Console.WriteLine("{0}: {1}", currentTitle, currentYear);
             }
          
-           // string type = (string)film.SelectToken("signInNames[0].type");
-
-
-
-
-            resetMovieData();
-            //Set the current film Node attributes
-            //BY THE WAY: this is a really long winded way round doing it
-            //It would be better to have a function here that resets them/sets them instead of individually (get:set methods)
-
-
-
-            //WebClient webClient = new WebClient();
-            //dynamic result = JsonValue.parse();
-
-            //var Film = new
-            //{
-            //    Name = name,
-            //    Year = release_date,
-            //    Genre = genres,
-            //    Awards = vote_average,
-            //    Poster = poster_path
-
-            //};
 
 
             //if (!isValidFilm(Film.Response)) // Check if the film is in the database

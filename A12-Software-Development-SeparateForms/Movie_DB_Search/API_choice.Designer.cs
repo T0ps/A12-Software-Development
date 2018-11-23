@@ -38,7 +38,7 @@
             this.OMDB_button.Name = "OMDB_button";
             this.OMDB_button.Size = new System.Drawing.Size(200, 150);
             this.OMDB_button.TabIndex = 0;
-            this.OMDB_button.Text = "OMDB";
+            this.OMDB_button.Text = "OMDB - Real Time Search";
             this.OMDB_button.UseVisualStyleBackColor = true;
             this.OMDB_button.Click += new System.EventHandler(this.OMDB_button_Click);
             // 
@@ -48,7 +48,7 @@
             this.TMDB_button.Name = "TMDB_button";
             this.TMDB_button.Size = new System.Drawing.Size(200, 150);
             this.TMDB_button.TabIndex = 1;
-            this.TMDB_button.Text = "TMDB";
+            this.TMDB_button.Text = "TMDB - List Search";
             this.TMDB_button.UseVisualStyleBackColor = true;
             this.TMDB_button.Click += new System.EventHandler(this.TMDB_button_Click);
             // 
@@ -60,7 +60,7 @@
             this.Controls.Add(this.TMDB_button);
             this.Controls.Add(this.OMDB_button);
             this.Name = "API_choice";
-            this.Text = "Form1";
+            this.Text = "Movie Database Search";
             this.ResumeLayout(false);
 
         }
